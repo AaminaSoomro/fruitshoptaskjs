@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Task</title>
+    <style>
+        body{
+            background-image: url(https://image.shutterstock.com/image-photo/fresh-fruits-market-260nw-99571175.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body style="text-align:center;">
+
+
+    <div class="main">
+   <input type="number" id="balance" placeholder="Your Amount">
+   <button onclick="input()">add</button>
+
+      
+      <div class="orange">
+          <h2>Fruit Shop</h2>
+        <h1>Grapes</h1>
+        <p>Rs 10 
+            <button onclick="add()">+</button>
+            <span id="items">0</span>
+            <button onclick="minus()">-</button>
+        </p>
+    </div>
+
+    <div class="total">
+        <p>Balance: <span id="balance2" >0</span></p>
+        <p>Total: <span id="total" >0</span></p>
+        <p>Remaining money: <span id="left" >0</span></p>
+    </div>
+</div>
+
+
+
+<script>
+    let total=0;  
+let balance=0;   
+let countA=0;
+let budget=0;
+
+function input()
+{
+    balance=parseInt(document.querySelector("#balance").value);
+    alert(balance+ " added.");
+    document.querySelector("#balance2").innerHTML=balance;
+}
+
+
+
+function add()
+{
+
+if(total<=budget)
+{   
+    budget=balance;
+    document.querySelector("#items").innerHTML=++countA;
+    total=countA*10;
+    document.querySelector("#total").innerHTML=total; 
+    budget-= 10;
+    document.getElementById("remaining amount").innerHTML = balance - total;       
+}
+
+
+}
+
+function minus()
+{
+    if (countA<=0)
+    {
+    alert();
+    }
+
+else
+{ 
+    budget=balance;
+    document.querySelector("#items").innerHTML=--countA;
+    total=countA*10;
+    document.querySelector("#total").innerHTML=total; 
+    budget+= 10;
+    document.getElementById("remaining amount").innerHTML = balance -total;   
+
+}
+
+}
+</script>
+</body>
+</html>
