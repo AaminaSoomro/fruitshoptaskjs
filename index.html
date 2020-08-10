@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruit Task</title>
+    <script src="fuctionoffs.js"></script>
     <style>
         body{
-            background-image: url(https://image.shutterstock.com/image-photo/fresh-fruits-market-260nw-99571175.jpg);
+            background-image: url(https://thumbs.dreamstime.com/z/banner-fresh-fruit-bright-fruits-white-background-53158895.jpg);
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        h2{
+            color: rgb(230, 102, 102);
+        }
+        h1{
+            color: rgb(54, 223, 49);
         }
     </style>
 
@@ -37,59 +44,3 @@
         <p>Remaining money: <span id="left" >0</span></p>
     </div>
 </div>
-
-
-
-<script>
-    let total=0;  
-let balance=0;   
-let countA=0;
-let budget=0;
-
-function input()
-{
-    balance=parseInt(document.querySelector("#balance").value);
-    alert(balance+ " added.");
-    document.querySelector("#balance2").innerHTML=balance;
-}
-
-
-
-function add()
-{
-
-if(total<=budget)
-{   
-    budget=balance;
-    document.querySelector("#items").innerHTML=++countA;
-    total=countA*10;
-    document.querySelector("#total").innerHTML=total; 
-    budget-= 10;
-    document.getElementById("remaining amount").innerHTML = balance - total;       
-}
-
-
-}
-
-function minus()
-{
-    if (countA<=0)
-    {
-    alert();
-    }
-
-else
-{ 
-    budget=balance;
-    document.querySelector("#items").innerHTML=--countA;
-    total=countA*10;
-    document.querySelector("#total").innerHTML=total; 
-    budget+= 10;
-    document.getElementById("remaining amount").innerHTML = balance -total;   
-
-}
-
-}
-</script>
-</body>
-</html>
